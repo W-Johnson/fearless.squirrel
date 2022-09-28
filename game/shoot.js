@@ -79,9 +79,11 @@ function player_falling() {
       var tileY = element[1] | 0;
       var mtileX = (element[0] + sizeOfTileX) | 0;
       var mtileY = (element[1] + sizeOfTileY) | 0;
-    }
-    if (x > tileX && x < mtileX && y > tileY && y < mtileY) {
-      player1.dead();
+
+      if (x >= tileX && x <= mtileX && y >= tileY && y <= mtileY) {
+        //  console.log("x = ", x, " y = ", y);
+        // player1.dead();
+      }
     }
   }
 }
