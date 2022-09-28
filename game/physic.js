@@ -7,7 +7,10 @@ function update() {
   if (keyboard.pressed("right")) player1.turnRight(rotateAngle);
   if (keyboard.pressed("up")) player1.accelerate(moveDistance);
   if (keyboard.pressed("down")) player1.decelerate(moveDistance);
-
+  console.log("before accelerate ", clock);
+  if (clock.elapsedTime > 3) ennemy1.decelerate(100);
+  else ennemy1.accelerate(100);
+  ennemy1.move();
   player1.move();
   controls.update();
 }
