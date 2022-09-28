@@ -4,7 +4,7 @@ var Ennemy = function (name, color, position, direction) {
   this.life = 3;
   this.bullets = new Array();
   this.direction = direction;
-  this.speed = 2;
+  this.speed = 1;
 
   this.material = new THREE.MeshLambertMaterial({
     color: color,
@@ -44,7 +44,7 @@ Ennemy.prototype.accelerate = function (distance) {
 Ennemy.prototype.decelerate = function (distance) {
   var min = -1;
 
-  this.speed -= distance / 16;
+  this.speed -= distance / 4;
   if (this.speed <= min) {
     this.speed = min;
   }
